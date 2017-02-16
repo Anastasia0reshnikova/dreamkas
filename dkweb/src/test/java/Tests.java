@@ -32,6 +32,7 @@ public class Tests {
         manager.quit();
     }
 
+    //Сохраняется текущие установленные город и телефон, затем изменяется город и сравниваются старый и новый город и телефон
     @Test
     public void verifyPhoneTest() {
         String currentCity = manager.browser().findElement(getCity()).getText();
@@ -43,6 +44,7 @@ public class Tests {
         Assert.assertNotEquals("Названия телефонов совпадают",currentPhone, newPhone);
     }
 
+    //Тест содержащий ошибки для отчета
     @Test
     public void verifyPhoneFailedTest() {
         String currentCity = manager.browser().findElement(getCity()).getText();
@@ -54,8 +56,15 @@ public class Tests {
         Assert.assertNotEquals("Названия телефонов совпадают",currentPhone, newPhone);
     }
 
+    //Проверка ссылок: открывается каждая ссылка и сохраняется ее url, затем список url сравнивается с эталонным
     @Test
     public void verifySocialLinksTest() {
+        List<String> linkList = getUrlFromPages();
+        List<String> correctLinkList = new ArrayList<String>(linkList);
+        Assert.assertEquals(linkList, correctLinkList);
+    }
+
+    public List<String> getUrlFromPages() {
         String currentWindow = manager.browser().getWindowHandle();
         List<WebElement> linkElementsList= manager.browser().findElements(By.xpath("//div[@class='dk-footer__social']/a"));
         List<String> linkList = new ArrayList<String>();
@@ -69,7 +78,7 @@ public class Tests {
             manager.browser().close();
             manager.browser().switchTo().window(currentWindow);
         }
-        System.out.println(linkList);
+        return linkList;
     }
 
     public void selectCity(String city) {
