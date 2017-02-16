@@ -1,12 +1,4 @@
 # dreamkas
-Открываем консоль и переходим в каталог с проектом<br>
-Вначале выполняем:<br>
-mvn site<br>
-Затем для запуска тестов и создания отчетов:<br>
-mvn surefire-report:report<br>
-<br>
-Отчет сохраняется в dkweb\target\site , файл с отчетом surefire-report.html
-<br>
 Исходники находятся в каталоге dkweb/src/test/java. В ресурсах размещен драйвер браузера
 <br>
 
@@ -16,6 +8,14 @@ mvn surefire-report:report<br>
 <br>
 Кликнуть на вкладку Maven Project
 <br>
-Кликнуть по кнопке Execute Maven Goal и ввести комманды указанные в самом начале
+Кликнуть по кнопке Execute Maven Goal и ввести комманды указанные ниже
+<br>
+Вначале выполняем:<br>
+mvn site<br>
+Затем для запуска тестов и создания отчетов:<br>
+mvn surefire-report:report<br>
+<br>
+Отчет сохраняется в dkweb\target\site , файл с отчетом surefire-report.html
+<br>
 <br>
 Я думаю, что можно это сделать все через консоль операционной системы, но не разбиралась как.
