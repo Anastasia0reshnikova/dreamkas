@@ -6,3 +6,5 @@ mvn site<br>
 mvn surefire-report:report<br>
 <br>
 Отчет сохраняется в dkweb\target\site , файл с отчетом surefire-report.html
+<br>
+Исходники находятся в каталоге dkweb/src/test/java. В ресурсах размещен драйвер браузера
